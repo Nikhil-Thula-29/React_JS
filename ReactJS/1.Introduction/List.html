@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List in HTML</title>
+</head>
+<body>
+    <h2>List in HTML</h2>
+    <ol>
+        <li>Apple</li>
+        <li>Samsung</li>
+        <li>Oppo</li>
+        <li>OnePlus</li>
+    </ol>
+
+    <ol>
+        <li>Apple</li>
+        <li>Samsung</li>
+        <li>Oppo</li>
+        <li>OnePlus</li>
+    </ol>
+
+    <ol>
+        <li>Apple</li>
+        <li>Samsung</li>
+        <li>Oppo</li>
+        <li>OnePlus</li>
+    </ol>
+
+    <h2>List Using JavaScript</h2>
+
+</body>
+<script>
+    function createList(){
+        let ol=document.createElement('ol');
+        let li1=document.createElement('li');
+        let li2=document.createElement('li');
+        let li3=document.createElement('li');
+        let li4=document.createElement('li');
+        li1.innerText='Apple';
+        li2.innerText='Ball';
+        li3.innerText='Cat';
+        li4.innerText='Dog';
+        ol.append(li1);
+        ol.append(li2);
+        ol.append(li3);
+        ol.append(li4);
+        document.querySelector('body').append(ol);
+    }
+    createList();
+    createList();
+    createList();
+
+</script>
+</html>

@@ -1,0 +1,39 @@
+Pre-requiste for React
+HTML:elements,tags,attributes
+css:general Properties,selectors,flext,grid
+JS: Varibales,Data types,Function,Operators,selection statements:if else switch
+object,array,DOM and Dom manipulation,Events
+Advance Js:ES6,Promises,oops,let var const,Module scope,clousers
+
+
+What is React or React JS ?
+-React JS is a JavaScript Library
+-React Js is not a framework
+
+What is Library?
+-Library is a collection of pre-defined functions,classes or Objects
+-React is a collection of pre-defined function,classes and Objects
+
+
+What is the purpose of ReactJS?
+-React JS is used to create UserInterface
+-If we have to create frontend application then it wont possible by react we need other libraries like ReactDOM,Redux,Axios,ReactRouter
+
+React==>UserInterface==>+==>Other Libraries==>FrontEnd application(Frontend Engineers)
+
+What is UserInterface?
+-Collection of UI Components
+
+We can create UI with HTML,JS but with React JS?
+-rendering,siglepage,etc...
+
+Create a simple Button Using HTML
+Button Element-----Button Tag 
+
+Create a simple button using JS
+Pre-defined object and functions
+DOM Button Element
+DOM
+
+Creating UI(Button) is easy on HTML
+Creating UI in JS looks little complex

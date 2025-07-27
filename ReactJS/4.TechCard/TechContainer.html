@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #container{
+            box-shadow:0 0 10px red;
+            margin-bottom: 30px;
+            padding:10px;
+            width: 1200px;
+            height: 200px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechContainer</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="coreele"></div>
+    <script type="text/babel">
+        /* function createContainer(title){
+            return (
+                <div id="container">
+                <h2>{title}</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto praesentium illum voluptatum, veritatis laborum vitae. Perspiciatis excepturi, autem dolores ullam dignissimos veniam placeat voluptas omnis laboriosam illo vero saepe soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia est sint quas! Repellendus error officiis possimus aliquam corporis quidem quas animi exercitationem iure provident eos veniam nemo, perspiciatis ad autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus culpa, eligendi minima doloribus alias nisi dolor, expedita error ex at porro temporibus harum ut. Reiciendis optio beatae sit eos nulla!</p>
+                <button>More Details</button>
+                </div>
+             );
+        } */
+
+        /* function multipleContainer(){
+            return (
+                <div>
+                    {createContainer("React JS")}
+                    {createContainer("Angular")}
+                    {createContainer("Node JS")}
+                </div>
+            );
+        } */
+        
+
+        /* ReactDOM.render(multipleContainer(),document.getElementById('coreele')); */
+
+                //or
+
+        function CreateContainer(){
+            return (
+                <div id="container">
+                <h2>React JS</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto praesentium illum voluptatum, veritatis laborum vitae. Perspiciatis excepturi, autem dolores ullam dignissimos veniam placeat voluptas omnis laboriosam illo vero saepe soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia est sint quas! Repellendus error officiis possimus aliquam corporis quidem quas animi exercitationem iure provident eos veniam nemo, perspiciatis ad autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus culpa, eligendi minima doloribus alias nisi dolor, expedita error ex at porro temporibus harum ut. Reiciendis optio beatae sit eos nulla!</p>
+                <button>More Details</button>
+                </div>
+             );
+        }
+
+        function MultipleContainer(){   //first letter should be capital
+            return (
+                <div>
+                    <CreateContainer/>
+                    <CreateContainer/>
+                    <CreateContainer/>
+                </div>
+            );
+        } 
+        
+
+
+        ReactDOM.render(<MultipleContainer/>,document.getElementById('coreele'));
+    </script>
+</body>
+</html>

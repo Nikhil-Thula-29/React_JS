@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List In React</title>
+   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    //arguments-->1.createElement ol,li,h2,etc..  2.attributes list 3.children--Matter inside it has to come
+    let oll=React.createElement('ol',
+    {
+        type:"i",
+        id:"users",
+        style:{
+            color:"red",
+            backgroundColor:"black",            //in inline css in react we need to follow camelcase
+            }
+    },
+    [
+        React.createElement('li',{},'Apple'),
+        React.createElement('li',{},'Ball',
+        React.createElement('li',{},'Cat'))
+    ]);
+    ReactDOM.render(oll,document.getElementById('root'));
+</script>
+</html>

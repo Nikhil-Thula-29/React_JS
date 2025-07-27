@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p{
+            font-weight: bolder;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Header</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function CreateUI(props){
+            return(
+                <div>
+                    <img src={props.image} width="70" height="70"/>
+                    <p>{props.title}</p>
+                </div>
+            );
+        }
+
+        function App(){
+            const containerStyle={
+                display:"flex",
+                justifyContent:"space-evenly",
+            };  
+            return (
+            <div style={
+                containerStyle
+            }>
+            <CreateUI image="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/a22a213ca6221b65.png?q=100" title="Minutes"/>
+            <CreateUI image="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/5f2ee7f883cdb774.png?q=100" title="Mobiles&Tablets"/>
+            <CreateUI image="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/e730a834ad950bae.png?q=100" title="Grocery"/>
+            <CreateUI image="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/3c647c2e0d937dc5.png?q=100" title="Flight Bookings"/>
+            <CreateUI image="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/e90944802d996756.jpg?q=100" title="TVs&Appliances"/>
+            </div>
+            );
+        }
+        ReactDOM.render(<App/>,document.getElementById('root'));
+    </script>
+</body>
+</html>

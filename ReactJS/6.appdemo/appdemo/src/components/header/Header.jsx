@@ -1,13 +1,15 @@
+import "./Header.css"
+
 //Keeping the file name and component name same and exporting it
 function Header(){
     let headerStyle={
-        color:"green",
+        color:"white",
     }
     return (
-        <div style={
+        <div className="header">
+            <h2 style={
             headerStyle
-        }>
-            <h2>Header Component</h2>
+        }>Header Component</h2>
         </div>
     );
 }

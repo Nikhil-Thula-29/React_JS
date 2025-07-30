@@ -1,0 +1,25 @@
+.leftPanel{
+    /* background-color: red; */
+    width: 40%;
+}
+.rightPanel a{
+    /* background-color: green; */
+    width: 60%;
+    color: white;
+    text-decoration: none;
+    margin: 70px;
+
+}
+.flexContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+.header{
+    background-color: rgb(43, 40, 40);
+    height: 80px;
+    color:white;
+    display: flex;
+    padding: 10px;
+}

@@ -16,6 +16,7 @@ import AllProducts from './components/allproducts/AllProducts'
 import UserNames from './components/user-names/UserNames'
 import A from './components/parent-child/A'
 import Aassign from './components/assignment-parenting/Aassign'
+import Acon from './components/context-api/Acon'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
       <Route path={'/usernames'}  element={<UserNames/>}/>
       <Route path={'/parenting'}  element={<A/>}/>
       <Route path={'/assignment'}  element={<Aassign/>}/>
+      <Route path={'/context-api'}  element={<Acon/>}/>
       <Route path={"*"} element={<PageNotFound/>}/>           {/* This has to be last */}
       </Routes>
     </div>

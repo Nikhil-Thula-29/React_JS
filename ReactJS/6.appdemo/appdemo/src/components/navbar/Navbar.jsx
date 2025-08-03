@@ -16,6 +16,7 @@ function Navbar(){
                 <Link to="/usernames">UserNames</Link>
                 <Link to="/parenting">Parenting</Link>
                 <Link to="/assignment">Assignment</Link>
+                <Link to="/context-api">Context-API</Link>
             </div>
         </div>
     );

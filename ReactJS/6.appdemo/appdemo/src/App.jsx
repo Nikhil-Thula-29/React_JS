@@ -11,6 +11,9 @@ import Electronics from './components/products/categories/electronics/Electronic
 import Jewellery from './components/products/categories/jewellery/Jewellery'
 import MensClothing from './components/products/categories/mensclothing/Mensclothing'
 import WomesClothing from './components/products/categories/womensclothing/Womensclothing'
+import PageNotFound from './components/pagenotfound/PageNotFound'
+import AllProducts from './components/allproducts/AllProducts'
+import UserNames from './components/user-names/UserNames'
 function App() {
 
   return (
@@ -30,7 +33,9 @@ function App() {
 
       <Route path={"/counter"} element={<Counter/>}/>
       <Route path={"/imagecomp"} element={<ImageComp/>}/>
-      
+      <Route path={"/allproducts"} element={<AllProducts/>}/>
+      <Route path={'/usernames'}  element={<UserNames/>}/>
+      <Route path={"*"} element={<PageNotFound/>}/>           {/* This has to be last */}
       </Routes>
     </div>
   )

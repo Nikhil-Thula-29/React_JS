@@ -14,6 +14,9 @@ import WomesClothing from './components/products/categories/womensclothing/Women
 import PageNotFound from './components/pagenotfound/PageNotFound'
 import AllProducts from './components/allproducts/AllProducts'
 import UserNames from './components/user-names/UserNames'
+import A from './components/parent-child/A'
+import Aassign from './components/assignment-parenting/Aassign'
+
 function App() {
 
   return (
@@ -35,6 +38,8 @@ function App() {
       <Route path={"/imagecomp"} element={<ImageComp/>}/>
       <Route path={"/allproducts"} element={<AllProducts/>}/>
       <Route path={'/usernames'}  element={<UserNames/>}/>
+      <Route path={'/parenting'}  element={<A/>}/>
+      <Route path={'/assignment'}  element={<Aassign/>}/>
       <Route path={"*"} element={<PageNotFound/>}/>           {/* This has to be last */}
       </Routes>
     </div>

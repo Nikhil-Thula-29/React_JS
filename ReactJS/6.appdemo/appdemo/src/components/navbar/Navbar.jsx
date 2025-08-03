@@ -14,6 +14,8 @@ function Navbar(){
                 <Link to="/counter">Counter</Link>
                 <Link to="/imagecomp">ImageComp</Link>
                 <Link to="/usernames">UserNames</Link>
+                <Link to="/parenting">Parenting</Link>
+                <Link to="/assignment">Assignment</Link>
             </div>
         </div>
     );

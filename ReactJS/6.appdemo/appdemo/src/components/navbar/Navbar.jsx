@@ -1,7 +1,12 @@
 
 import './Navbar.css';
 import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import homeContext from '../context-api/MyHomeContext';
+import { useState } from 'react';
+
 function Navbar(){
+    let info=useContext(homeContext);
     return(
         <div class="header">
             <div class="leftPanel flexContainer">
@@ -17,6 +22,7 @@ function Navbar(){
                 <Link to="/parenting">Parenting</Link>
                 <Link to="/assignment">Assignment</Link>
                 <Link to="/context-api">Context-API</Link>
+                <span className="separator">{info}</span>
             </div>
         </div>
     );

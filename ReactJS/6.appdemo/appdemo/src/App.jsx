@@ -17,6 +17,9 @@ import UserNames from './components/user-names/UserNames'
 import A from './components/parent-child/A'
 import Aassign from './components/assignment-parenting/Aassign'
 import Acon from './components/context-api/Acon'
+import HomeContext from './components/context-api/HomeContext'
+import Name from './components/child-parent/Name'
+import Ref from './components/ref/ref'
 
 function App() {
 
@@ -24,6 +27,9 @@ function App() {
     <div className="app">
       {/* <h2>App Component</h2>
       <Header/> */}
+      {/* <HomeContext/> */}
+      {/* <Name/> */}
+      <Ref/>
       <Navbar/>
       <Routes>
       <Route path={"/"} element={<Home/>}/>

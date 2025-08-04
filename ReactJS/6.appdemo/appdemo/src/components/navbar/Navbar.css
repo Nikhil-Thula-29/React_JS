@@ -1,20 +1,29 @@
 .leftPanel{
     /* background-color: red; */
-    width: 40%;
+    width: 25%;
 }
-.rightPanel a{
-    /* background-color: green; */
-    width: 60%;
-    color: white;
-    text-decoration: none;
-    margin: 40px;
+.rightPanel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
+.rightPanel a {
+ /* background-color: green; */
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
 }
+
+.separator {
+  color: white;
+}
+
 .flexContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 17px;
+    font-size: 16px;
 }
 .header{
     background-color: rgb(43, 40, 40);

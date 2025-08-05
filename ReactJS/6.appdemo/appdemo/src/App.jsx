@@ -20,6 +20,7 @@ import Acon from './components/context-api/Acon'
 import HomeContext from './components/context-api/HomeContext'
 import Name from './components/child-parent/Name'
 import Ref from './components/ref/ref'
+import Timer from './components/timer/Timer'
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
       <Header/> */}
       {/* <HomeContext/> */}
       {/* <Name/> */}
-      <Ref/>
+      {/* <Ref/> */}
+      <Timer/>
       <Navbar/>
       <Routes>
       <Route path={"/"} element={<Home/>}/>

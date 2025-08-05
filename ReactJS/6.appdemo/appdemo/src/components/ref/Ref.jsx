@@ -1,11 +1,12 @@
 
 import './Ref.css'
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 function Ref(){
     let[state,setState]=useState(null);
-    let[data,setData]=useState(null);
-    let value; //undefined
-    
+   // let[data,setData]=useState(null); //we can not store as we are not rendering this value on UI.
+    //let value; //undefined   //noraml variable value becomes undefined on rerendering.
+    let info=useRef("hello");  //info={current:"hello"}
+
     let updateState=()=>{
         setState(100);
     }
@@ -15,13 +16,13 @@ function Ref(){
     }
 
     let updateValue=()=>{
-        value="Value got updated";
+        value="Welcome";
     }
 
     let displayValue=()=>{
         console.log("State",state);
         console.log("Data",data);
-        console.log(value);
+        console.log("variable",info);
     }
 
     return(

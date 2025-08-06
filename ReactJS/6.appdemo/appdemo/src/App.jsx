@@ -21,6 +21,8 @@ import HomeContext from './components/context-api/HomeContext'
 import Name from './components/child-parent/Name'
 import Ref from './components/ref/ref'
 import Timer from './components/timer/Timer'
+import RefDom from './components/ref/RefDom'
+import UseReducer from './components/reducer/UseReducer'
 
 function App() {
 
@@ -31,7 +33,9 @@ function App() {
       {/* <HomeContext/> */}
       {/* <Name/> */}
       {/* <Ref/> */}
-      <Timer/>
+      {/* <Timer/> */}
+      {/* <RefDom/> */}
+      <UseReducer/>
       <Navbar/>
       <Routes>
       <Route path={"/"} element={<Home/>}/>

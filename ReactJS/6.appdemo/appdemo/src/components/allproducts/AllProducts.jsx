@@ -5,6 +5,7 @@ import {useState} from 'react';
 function AllProducts(){
 
     let [allProducts,setAllProducts]=useState([]);
+    console.log(allProducts);
     let getProducts=()=>{
         var promiseObject=axios.get("https://fakestoreapi.com/products");
         promiseObject.then((res)=>{
@@ -25,9 +26,9 @@ function AllProducts(){
                 {/* use {} bcz inside jsx we need to use {} if we want to write any js code.  */}
                {
                 allProducts.map((ele)=>{
-                    return <Cards image={ele.image} title={ele.title} price={ele.price} rating={ele.rating.rate}/>
+                    return <Cards image={ele.image} title={ele.title} price={ele.price} rating={ele.rating.rate} id={ele.id}/>
                 })
-               } 
+               }
             </div>
         </div>
     );

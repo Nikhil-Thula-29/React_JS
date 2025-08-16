@@ -29,6 +29,9 @@ import DetailsChild from './redux/components/DetailsChild'
 import City from './redux/components/City'
 import ReduxHome from './redux/components/ReduxHome'
 import AllProductsWithRedux from './components/allproducts/AllProductsWithRedux'
+import ProductDetails from './components/allproducts/ProductDetails'
+
+
 
 
 function App() {
@@ -71,6 +74,7 @@ function App() {
       <Route path={'/context-api'}  element={<Acon/>}/>
       <Route path={'/redux'} element={<ReduxHome/>}/>
       <Route path={'/prodwithredux'} element={<AllProductsWithRedux/>}/>
+      <Route path={'/proddetails/:id'} element={<ProductDetails/>}/>
       <Route path={"*"} element={<PageNotFound/>}/>           {/* This has to be last */}
       </Routes>
     </div>

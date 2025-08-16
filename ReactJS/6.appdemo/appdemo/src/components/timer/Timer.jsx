@@ -4,7 +4,7 @@ function Timer(){
     let [timer,setTimer]=useState(0);
     //var timerId;  //We cant store in this way due to rendering of setInterval.
     //let [timerId,setTimerId]=useState();  //This timerId is also should not be stored in this way as we not showing that id value on screen so use, useref();
-    let timerId=useRef();   //timerId={current:jundefined}   
+    let timerId=useRef();   //timerId={current:undefined}   
     //timerId.current=new value  (how to update timer value)
 
     const startTimer=()=>{

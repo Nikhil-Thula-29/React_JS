@@ -23,6 +23,7 @@ import Ref from './components/ref/ref'
 import Timer from './components/timer/Timer'
 import RefDom from './components/ref/RefDom'
 import UseReducer from './components/reducer/UseReducer'
+import CounterRed from './components/reducer/CounterRed'
 
 function App() {
 
@@ -35,7 +36,8 @@ function App() {
       {/* <Ref/> */}
       {/* <Timer/> */}
       {/* <RefDom/> */}
-      <UseReducer/>
+      {/* <UseReducer/> */}
+      <CounterRed/>
       <Navbar/>
       <Routes>
       <Route path={"/"} element={<Home/>}/>

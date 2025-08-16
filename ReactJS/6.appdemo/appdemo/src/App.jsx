@@ -24,6 +24,12 @@ import Timer from './components/timer/Timer'
 import RefDom from './components/ref/RefDom'
 import UseReducer from './components/reducer/UseReducer'
 import CounterRed from './components/reducer/CounterRed'
+import NameParent from './redux/components/NameParent'
+import DetailsChild from './redux/components/DetailsChild'
+import City from './redux/components/City'
+import ReduxHome from './redux/components/ReduxHome'
+import AllProductsWithRedux from './components/allproducts/AllProductsWithRedux'
+
 
 function App() {
 
@@ -37,7 +43,13 @@ function App() {
       {/* <Timer/> */}
       {/* <RefDom/> */}
       {/* <UseReducer/> */}
-      <CounterRed/>
+      {/* <CounterRed/> */}
+      {/* <div className='subAppContainer'>
+        <NameParent/>
+        <City/>
+      </div>
+      <hr></hr>
+      <DetailsChild/> */}
       <Navbar/>
       <Routes>
       <Route path={"/"} element={<Home/>}/>
@@ -52,10 +64,13 @@ function App() {
       <Route path={"/counter"} element={<Counter/>}/>
       <Route path={"/imagecomp"} element={<ImageComp/>}/>
       <Route path={"/allproducts"} element={<AllProducts/>}/>
-      <Route path={'/usernames'}  element={<UserNames/>}/>
+      {/* <Route path={'/usernames'}  element={<UserNames/>}/> */}
+      <Route path={"/reducerfn"} element={<CounterRed/>}/>
       <Route path={'/parenting'}  element={<A/>}/>
       <Route path={'/assignment'}  element={<Aassign/>}/>
       <Route path={'/context-api'}  element={<Acon/>}/>
+      <Route path={'/redux'} element={<ReduxHome/>}/>
+      <Route path={'/prodwithredux'} element={<AllProductsWithRedux/>}/>
       <Route path={"*"} element={<PageNotFound/>}/>           {/* This has to be last */}
       </Routes>
     </div>

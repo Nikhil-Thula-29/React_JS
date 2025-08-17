@@ -30,12 +30,17 @@ import City from './redux/components/City'
 import ReduxHome from './redux/components/ReduxHome'
 import AllProductsWithRedux from './components/allproducts/AllProductsWithRedux'
 import ProductDetails from './components/allproducts/ProductDetails'
-
-
+import Profile from './components/profile/Profile'
+import Login from './components/login/Login'
+import { useContext } from 'react'
+import { AuthContext } from './components/authentication/AuthProvider'
+import Logout from './components/logout/Logout'
+import { Navigate } from 'react-router-dom'
+import ProtectedRoutes from './components/authentication/ProtecedRoutes'
 
 
 function App() {
-
+  const {isLoggedIn}=useContext(AuthContext);
   return (
     <div className="app">
       {/* <h2>App Component</h2>
@@ -55,26 +60,28 @@ function App() {
       <DetailsChild/> */}
       <Navbar/>
       <Routes>
-      <Route path={"/"} element={<Home/>}/>
-
-      <Route path={"/products"} element={<Products/>}>
-        <Route path={"electronics"} element={<Electronics/>}/>
-        <Route path={"jewellery"} element={<Jewellery/>}/>
-        <Route path={"mensclothing"} element={<MensClothing/>}/>
-        <Route path={"womensclothing"} element={<WomesClothing/>}/>
+      <Route path={"/"} element={<Login/>}/>
+      <Route path={"/home"} element={isLoggedIn?<Home/>:<Navigate to="/"/>}/>  {/* we can write as below protected with separte fun or direct */}
+      <Route path={"/products"} element={<ProtectedRoutes><Products/></ProtectedRoutes>}>
+        <Route path={"electronics"} element={<ProtectedRoutes><Electronics/></ProtectedRoutes>}/>
+        <Route path={"jewellery"} element={<ProtectedRoutes><Jewellery/></ProtectedRoutes>}/>
+        <Route path={"mensclothing"} element={<ProtectedRoutes><MensClothing/></ProtectedRoutes>}/>
+        <Route path={"womensclothing"} element={<ProtectedRoutes><WomesClothing/></ProtectedRoutes>}/>
       </Route>
 
-      <Route path={"/counter"} element={<Counter/>}/>
-      <Route path={"/imagecomp"} element={<ImageComp/>}/>
-      <Route path={"/allproducts"} element={<AllProducts/>}/>
+      <Route path={"/counter"} element={<ProtectedRoutes><Counter/></ProtectedRoutes>}/>
+      <Route path={"/imagecomp"} element={<ProtectedRoutes><ImageComp/></ProtectedRoutes>}/>
+      <Route path={"/allproducts"} element={<ProtectedRoutes><AllProducts/></ProtectedRoutes>}/>
       {/* <Route path={'/usernames'}  element={<UserNames/>}/> */}
-      <Route path={"/reducerfn"} element={<CounterRed/>}/>
-      <Route path={'/parenting'}  element={<A/>}/>
-      <Route path={'/assignment'}  element={<Aassign/>}/>
-      <Route path={'/context-api'}  element={<Acon/>}/>
-      <Route path={'/redux'} element={<ReduxHome/>}/>
-      <Route path={'/prodwithredux'} element={<AllProductsWithRedux/>}/>
-      <Route path={'/proddetails/:id'} element={<ProductDetails/>}/>
+      <Route path={"/reducerfn"} element={<ProtectedRoutes><CounterRed/></ProtectedRoutes>}/>
+      <Route path={'/parenting'}  element={<ProtectedRoutes><A/></ProtectedRoutes>}/>
+      <Route path={'/assignment'}  element={<ProtectedRoutes><Aassign/></ProtectedRoutes>}/>
+      <Route path={'/context-api'}  element={<ProtectedRoutes><Acon/></ProtectedRoutes>}/>
+      <Route path={'/redux'} element={<ProtectedRoutes><ReduxHome/></ProtectedRoutes>}/>
+      <Route path={'/prodwithredux'} element={<ProtectedRoutes><AllProductsWithRedux/></ProtectedRoutes>}/>
+      <Route path={'/proddetails/:id'} element={<ProtectedRoutes><ProductDetails/></ProtectedRoutes>}/>
+      <Route path={"/profile"} element={<ProtectedRoutes><Profile/></ProtectedRoutes>}/>
+      <Route path={"/logout"} element={<ProtectedRoutes><Logout/></ProtectedRoutes>}/>
       <Route path={"*"} element={<PageNotFound/>}/>           {/* This has to be last */}
       </Routes>
     </div>

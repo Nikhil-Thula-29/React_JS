@@ -1,6 +1,7 @@
 import Image from "./Image";
 import Text from "./Text";
 import { useState } from "react";
+import Users from "./Users";
 
 function UseEffect(){
     const[showImage,setShowImage]=useState(true);
@@ -18,6 +19,8 @@ function UseEffect(){
             <button onClick={()=>{
                 setShowImage(false);
             }}>Show Text</button>
+            <hr></hr>
+            <Users/>
         </div>
     );
 }

@@ -1,6 +1,16 @@
+import { useEffect } from "react";
 
 
 function Text(){
+
+    /* document.title="Text Component"; */    //side Effects //invalid
+
+    useEffect(()=>{
+        document.title="Text Component";
+        /* localStorage.removeItem('name');
+        console.log(localStorage.getItem('name')); */
+    },[])
+    
     return (
         <div>
             <h2 style={{color:"red"}}>Text Component</h2>

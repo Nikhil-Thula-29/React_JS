@@ -1,6 +1,5 @@
-.leftPanel{
-    /* background-color: red; */
-    width: 15%;
+/* .leftPanel{
+    width: 20%;
 }
 .rightPanel {
   display: flex;
@@ -9,7 +8,7 @@
 }
 
 .rightPanel a {
- /* background-color: green; */
+
   color: white;
   text-decoration: none;
   padding: 8px 12px;
@@ -31,4 +30,47 @@
     color:white;
     display: flex;
     padding: 10px;
+}  */
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgb(43, 40, 40);
+    height: 80px;
+    color: white;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.leftPanel {
+    display: flex;        
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    flex: 0 0 auto;       
+}
+
+.rightPanel {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    overflow-x: auto;       
+    white-space: nowrap;    
+}
+
+.rightPanel a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    flex-shrink: 0;        
+}
+
+
+.rightPanel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.rightPanel::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
 }

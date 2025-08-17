@@ -37,6 +37,8 @@ import { AuthContext } from './components/authentication/AuthProvider'
 import Logout from './components/logout/Logout'
 import { Navigate } from 'react-router-dom'
 import ProtectedRoutes from './components/authentication/ProtecedRoutes'
+import UseEffect from './components/lifeCycle/UseEffect'
+
 
 
 function App() {
@@ -81,6 +83,7 @@ function App() {
       <Route path={'/prodwithredux'} element={<ProtectedRoutes><AllProductsWithRedux/></ProtectedRoutes>}/>
       <Route path={'/proddetails/:id'} element={<ProtectedRoutes><ProductDetails/></ProtectedRoutes>}/>
       <Route path={"/profile"} element={<ProtectedRoutes><Profile/></ProtectedRoutes>}/>
+      <Route path={"/useeffect"} element={<ProtectedRoutes><UseEffect/></ProtectedRoutes>}/>
       <Route path={"/logout"} element={<ProtectedRoutes><Logout/></ProtectedRoutes>}/>
       <Route path={"*"} element={<PageNotFound/>}/>           {/* This has to be last */}
       </Routes>

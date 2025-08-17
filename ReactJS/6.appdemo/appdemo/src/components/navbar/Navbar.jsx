@@ -7,6 +7,7 @@ import { useState } from 'react';
 import CounterRed from '../reducer/CounterRed';
 import Logout from '../logout/Logout';
 import { AuthContext } from '../authentication/AuthProvider';
+import UseEffect from '../lifeCycle/UseEffect';
 
 function Navbar(){
     let info=useContext(homeContext);
@@ -30,6 +31,7 @@ function Navbar(){
                 <Link to="/context-api">Context-API</Link>
                 <Link to="/prodwithredux">Products with Redux</Link>
                 <Link to="/profile">Profile-QueryParam</Link>
+                <Link to="/useeffect">UseEffect</Link>
                 {
                     isLoggedIn&&<Link to="/logout">Logout</Link>
                 }

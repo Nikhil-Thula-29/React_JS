@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState,useEffect } from "react";
 
+
+
 function ProductDetails(){
     let {id}=useParams();
     let[state,setState]=useState({

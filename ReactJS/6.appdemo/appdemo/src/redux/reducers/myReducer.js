@@ -1,6 +1,7 @@
 const initialData={
     name:"Nikhil",
     city:"Warangal",
+    products:[],
 }
 
 const myReducer=(state=initialData,action)=>{
@@ -14,6 +15,16 @@ const myReducer=(state=initialData,action)=>{
         state={
             ...state,   //It will copy before state object by using spread operator.
             city:action.cityName,
+        }
+    }else if(action.type=="PRODUCTS"){
+        state={
+            ...state,
+            products:action.payload,
+        }
+    }else if(action.type=="SINGLEPROD"){
+        state={
+            ...state,
+            prod:action.payload,
         }
     }
     return state;

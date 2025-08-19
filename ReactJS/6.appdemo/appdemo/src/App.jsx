@@ -38,7 +38,7 @@ import Logout from './components/logout/Logout'
 import { Navigate } from 'react-router-dom'
 import ProtectedRoutes from './components/authentication/ProtecedRoutes'
 import UseEffect from './components/lifeCycle/UseEffect'
-
+import ProductDetailsWithRedux from './components/allproducts/ProductDetailsWithRedux'
 
 
 function App() {
@@ -82,6 +82,7 @@ function App() {
       <Route path={'/redux'} element={<ProtectedRoutes><ReduxHome/></ProtectedRoutes>}/>
       <Route path={'/prodwithredux'} element={<ProtectedRoutes><AllProductsWithRedux/></ProtectedRoutes>}/>
       <Route path={'/proddetails/:id'} element={<ProtectedRoutes><ProductDetails/></ProtectedRoutes>}/>
+      <Route path={'/proddetails/:id/:x'} element={<ProtectedRoutes><ProductDetailsWithRedux/></ProtectedRoutes>}/>
       <Route path={"/profile"} element={<ProtectedRoutes><Profile/></ProtectedRoutes>}/>
       <Route path={"/useeffect"} element={<ProtectedRoutes><UseEffect/></ProtectedRoutes>}/>
       <Route path={"/logout"} element={<ProtectedRoutes><Logout/></ProtectedRoutes>}/>

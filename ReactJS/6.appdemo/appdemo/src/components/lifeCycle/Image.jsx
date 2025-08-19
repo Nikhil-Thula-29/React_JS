@@ -23,6 +23,16 @@ function Image(){
         }
     });
 
+
+     /* useEffect(()=>{
+        console.log("UseEffect callback is called");
+        document.title=`${title} Image Component`;
+        localStorage.setItem('name',"Nikhil Thula");
+        return ()=>{
+            localStorage.removeItem('name');    //This is called before umounted.
+        }
+    },[image]); */ //this will call useeffect only in image update
+
     return (
         <div>
            {/*  {console.log("JSX Console")} */}

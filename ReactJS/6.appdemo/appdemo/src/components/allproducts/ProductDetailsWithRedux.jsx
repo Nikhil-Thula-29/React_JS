@@ -10,15 +10,13 @@ function ProductDetailsWithRedux(){
     let {id,x}=useParams(); //parameters={id:20,x:35.5}
     let dispatch=useDispatch();
 
-
-    let productData=useSelector((storedata)=>{
-         return storedata.products.filter((prod)=>{
-              return prod.id==id;
-        })
-    });
+    
+    let product=useSelector((storedata)=>{
+        return storedata.prod;
+    })
 
     useEffect(()=>{
-        if(productData.length===0){
+        if(!product || product.id != id){
             console.log("from server");
            fetch(`https://fakestoreapi.com/products/${id}`)
         .then((res)=>{
@@ -37,12 +35,10 @@ function ProductDetailsWithRedux(){
               console.log("Using store data", productData);
         }
     },[]);
-
-     if (productData.length === 0) {
+    
+    if (!product || product.id != id) {
         return <p>Loading product...</p>;
-    }
-     let product = productData[0];
-   
+    }   
     return (
         <div>
             <h2>Product Details</h2>

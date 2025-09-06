@@ -16,16 +16,25 @@ const handleLogin=()=>{
         navigate("/home");
     }
 }
+
+const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
+
   return (
     <div className="login-container">
       <div className="login-box">
         <h2>Login Details</h2>
         <input type="text" placeholder="Username" onChange={(event)=>{
-            setUsername(event.target.value);
-        }}/>
+            setUsername(event.target.value)}}
+            onKeyDown={handleKeyDown} 
+            />
         <input type="password" placeholder="Enter Password" onChange={(event)=>{
-            setPassword(event.target.value);
-        }}/>
+            setPassword(event.target.value)}}
+            onKeyDown={handleKeyDown} 
+            />
         <button onClick={handleLogin}>Login</button>
       </div>
     </div>

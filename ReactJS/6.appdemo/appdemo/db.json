@@ -1,0 +1,25 @@
+{
+    "result":[
+        {
+            "name":"Nikhil",
+            "city":"city1"
+        },
+        {
+            "name":"Anusha",
+            "city":"city2"
+        },
+         {
+            "name":"Venkat",
+            "city":"city3"
+        },
+         {
+            "name":"Kiran",
+            "city":"city4"
+        },
+         {
+            "name":"Shreya",
+            "city":"city5"
+        }
+        
+    ]
+}

@@ -32,6 +32,7 @@ function Navbar(){
                 <Link to="/prodwithredux">Products with Redux</Link>
                 <Link to="/profile">Profile-QueryParam</Link>
                 <Link to="/useeffect">UseEffect</Link>
+                <Link to="/jsonserver">Users-JsonServer</Link>
                 {
                     isLoggedIn&&<Link to="/logout">Logout</Link>
                 }

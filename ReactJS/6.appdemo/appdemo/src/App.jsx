@@ -39,6 +39,8 @@ import { Navigate } from 'react-router-dom'
 import ProtectedRoutes from './components/authentication/ProtecedRoutes'
 import UseEffect from './components/lifeCycle/UseEffect'
 import ProductDetailsWithRedux from './components/allproducts/ProductDetailsWithRedux'
+import UsersJson from './components/json-server/UsersJson'
+import NewUser from './components/json-server/NewUser'
 
 
 function App() {
@@ -85,6 +87,10 @@ function App() {
       <Route path={'/proddetails/:id/:x'} element={<ProtectedRoutes><ProductDetailsWithRedux/></ProtectedRoutes>}/>
       <Route path={"/profile"} element={<ProtectedRoutes><Profile/></ProtectedRoutes>}/>
       <Route path={"/useeffect"} element={<ProtectedRoutes><UseEffect/></ProtectedRoutes>}/>
+      <Route path={"/jsonserver"} element={<ProtectedRoutes><div style={{display:"flex",justifyContent:"space-evenly"}}>
+        <NewUser/>
+        <UsersJson/>
+      </div></ProtectedRoutes>}/>
       <Route path={"/logout"} element={<ProtectedRoutes><Logout/></ProtectedRoutes>}/>
       <Route path={"*"} element={<PageNotFound/>}/>           {/* This has to be last */}
       </Routes>

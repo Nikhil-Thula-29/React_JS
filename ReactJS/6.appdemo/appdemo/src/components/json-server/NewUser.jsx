@@ -3,21 +3,31 @@ import "./NewUser.css";
 import axios from "axios";
 
 
-function NewUser(){
+function NewUser({getUsers,isNewUser,setNewUser,newuser,setIsNewUser}){
 
-    let[newuser,setNewUser]=useState({
-        name:"",
-        city:""
-    });
-
-
-
+    const updateUser=()=>{
+        axios.put(`http://localhost:3000/result/${newuser.id}`,newuser)
+            .then((res)=>{
+                console.log(res.data);
+                getUsers();
+                setNewUser({
+                name: "",
+                city: "",
+                });
+                setIsNewUser(true);
+            })
+            .catch((error) => {
+                alert("Went something wrong while updating User");
+                console.log(error);
+            });
+    }
     const getNewUser=(e)=>{
          e.preventDefault();
         axios.post('http://localhost:3000/result',newuser)
         .then((res)=>{
-            console.log(res.data);
-            location.reload("/jsonserver");
+            //console.log(res.data);
+            getUsers(); //This calls getUsers from NewUser props and in that UserHome.jsx getUsers is called so that we are getting updated in table.
+            setNewUser({ name: "", city: "" });
         })
         .catch((err)=>{
             console.log(err);
@@ -27,27 +37,27 @@ function NewUser(){
 
     return (
         <div className="new-user">
-            <h2>New Users</h2>
-            <form onSubmit={getNewUser}>
+            <h2>{isNewUser?"New User" :"Update User"}</h2>
+            <form>
             <input type="text" placeholder="username" required
-            onChange={(eve)=>{
+            value={newuser.name} onChange={(eve)=>{
                 setNewUser({...newuser,name:eve.target.value});
             }}/>
             <br></br>
             <br></br>
-            <select required onChange={(event)=>{
+            <select required  value={newuser.city}  onChange={(event)=>{
                 setNewUser({...newuser,city:event.target.value});
             }}>
                 <option value="">Select City</option>
-                <option>City1</option>
-                <option>City2</option>
-                <option>City3</option>
-                <option>City4</option>
-                <option>City5</option>
+                <option value="City1">City1</option>
+                <option value="City2">City2</option>
+                <option value="City3">City3</option>
+                <option value="City4">City4</option>
+                <option value="City5">City5</option>
             </select>
             <br></br>
             <br></br>
-            <button type="submit">New User</button>
+            <button onClick={isNewUser?getNewUser:updateUser}>{isNewUser?"New User" :"Update User"}</button>
             </form>
         </div>
     );

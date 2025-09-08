@@ -1,25 +1,33 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import "./UsersJson.css";
+import axios from "axios";
+import C from "../parent-child/C";
 
 
 
-function UsersJson(){
-    let[users,setState]=useState([]);
+function UsersJson({getUsers,users,setIsNewUser,setNewUser}){
+    
     useEffect(()=>{
         getUsers();
     },[]);
 
-    const getUsers=()=>{
-        axios.get("http://localhost:3000/result")
-        .then((res)=>{
-            //console.log(res.data);//Here .data is data in json after printing res we will get to know so keep res.data
-            setState(res.data); //If we dont update setState then users length will be 0 then table wont print
-        })
-        .catch(()=>{
-            alert("Some thing went wrong..");
-        })
-    };
+    const deleteUser=(id)=>{
+        const confirm=window.confirm("Would you like to delete?");
+        if(confirm){
+            axios.delete(`http://localhost:3000/result/${id}`)
+            .then(()=>{
+                getUsers(); 
+            })
+            .catch((err)=>{
+                console.log(err);
+            });
+        }
+    }
+    
+    const updateUser=(users)=>{
+        setIsNewUser(false);
+        setNewUser(users);
+    }
 
     return (
         <div className="users-json">
@@ -31,7 +39,7 @@ function UsersJson(){
                         <tr>
                             <th style={{textAlign:"center"}}>Name</th>
                             <th style={{textAlign:"center"}}>City</th>
-                            <th colSpan={3} style={{textAlign:"center"}}>Action</th>
+                            <th colSpan={2} style={{textAlign:"center"}}>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,13 +49,14 @@ function UsersJson(){
                                     <td>{ele.name}</td>
                                     <td>{ele.city}</td>
                                     <td>
-                                    <button className="btn-primary">Read</button>
+                                    <button onClick={()=>{
+                                        updateUser(ele);
+                                    }} className="btn-success">Edit</button>
                                     </td>
                                     <td>
-                                    <button className="btn-success">Edit</button>
-                                    </td>
-                                    <td>
-                                    <button className="btn-danger">Delete</button>
+                                    <button onClick={(e)=>{
+                                        deleteUser(ele.id);
+                                    }} className="btn-danger">Delete</button>
                                     </td>
 
                                 </tr>
